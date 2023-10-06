@@ -22,14 +22,14 @@ pip install numpy scipy
 ## Usage
 
 1. Clone the repository.
-2. Modify the `text` variable in the script to your desired text.
-3. Run the script with Python:
+2. Install the dependencies
+2. Run the script with Python:
 
 
-python droid_tts.py
+python droid-tts.py 'Text for the tts' 'output_filename.wav'
 
 
-This will generate a `text_as_droid_sound.wav` file containing the droid sound based on your input text.
+This will generate a `output_filename.wav` file containing the droid sound based on your input text.
 
 ## Features
 
