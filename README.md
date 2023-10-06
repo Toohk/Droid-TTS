@@ -15,9 +15,9 @@ This Python script converts any given text into a sequence of droid-like "beeps"
 
 You can install the dependencies using:
 
-\```bash
+
 pip install numpy scipy
-\```
+
 
 ## Usage
 
@@ -25,9 +25,9 @@ pip install numpy scipy
 2. Modify the `text` variable in the script to your desired text.
 3. Run the script with Python:
 
-\```bash
+
 python droid_tts.py
-\```
+
 
 This will generate a `text_as_droid_sound.wav` file containing the droid sound based on your input text.
 
