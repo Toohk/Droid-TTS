@@ -1,6 +1,7 @@
 
 import numpy as np
 from scipy.io.wavfile import write
+import sys
 
 sample_rate = 44100
 
@@ -51,8 +52,15 @@ def text_to_droid_bips(text, sample_rate=44100):
     
     return np.concatenate(unique_bips)
 
-# Example usage:
-text = "Its a test!'"
-sound = text_to_droid_bips(text)
-sound = (sound / np.max(np.abs(sound)) * 32767).astype(np.int16)
-write("text_as_droid_sound.wav", sample_rate, sound)
+if __name__ == "__main__":
+    if len(sys.argv) != 3:
+        print("Usage: python droid-tts.py 'Text for the tts' 'output_filename.wav'")
+        sys.exit(1)
+
+    text = sys.argv[1]
+    output_filename = sys.argv[2]
+    sample_rate = 44100
+    sound = text_to_droid_bips(text)
+    sound = (sound / np.max(np.abs(sound)) * 32767).astype(np.int16)
+    write(output_filename, sample_rate, sound)
+    print(f"Audio saved to {output_filename}")
